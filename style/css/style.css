@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-family: "Quicksand", sans-serif; }
+  body button {
+    background: transparent;
+    border: none;
+    outline: none;
+    display: block;
+    color: #636264;
+    font-size: 17px;
+    font-weight: 100;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    cursor: pointer;
+    width: max-content;
+    padding: 10px;
+    font-family: "Quicksand", sans-serif;
+    margin-bottom: 5px; }
+    body button img {
+      margin-right: 15px;
+      width: 20px;
+      height: 20px; }
+
+.wrapper {
+  padding: 10vw 0;
+  background-image: linear-gradient(134deg, #aa936f 62%, #7c3a3c 93%); }
+  .wrapper .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #ffffff;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative; }
+    .wrapper .container .player_wrapper {
+      display: grid;
+      text-align: center;
+      justify-content: center;
+      background: #ffffff;
+      padding: 80px;
+      justify-items: center; }
+      .wrapper .container .player_wrapper .player_name {
+        font-size: 28px;
+        text-transform: uppercase;
+        font-weight: 300;
+        position: relative;
+        display: flex;
+        align-items: center;
+        color: gray; }
+        .wrapper .container .player_wrapper .player_name::after {
+          content: "";
+          width: 12px;
+          height: 12px;
+          border-radius: 30px;
+          margin-left: 20px;
+          background: transparent; }
+      .wrapper .container .player_wrapper .player_points {
+        font-weight: 100;
+        font-size: 60px;
+        padding-top: 15px;
+        color: #ef1c40; }
+      .wrapper .container .player_wrapper .current_wrapper {
+        margin-top: 140px;
+        padding: 11px 0 5px;
+        width: 100px;
+        text-align: center;
+        background: #ef1c40;
+        cursor: pointer; }
+        .wrapper .container .player_wrapper .current_wrapper .current {
+          font-size: 11px;
+          color: black;
+          padding-bottom: 5px;
+          text-transform: uppercase; }
+        .wrapper .container .player_wrapper .current_wrapper .points {
+          color: #ffffff;
+          font-size: 26px;
+          font-weight: lighter; }
+    .wrapper .container .player_wrapper.active {
+      background: #f7f6f8; }
+      .wrapper .container .player_wrapper.active .player_name::after {
+        background: #ef1c40; }
+    .wrapper .container .player_wrapper.winner {
+      background: #f7f6f8; }
+      .wrapper .container .player_wrapper.winner .player_name {
+        color: #ef1c40; }
+        .wrapper .container .player_wrapper.winner .player_name::after {
+          background: #ffffff; }
+    .wrapper .container .central_div {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0);
+      height: 100%; }
+      .wrapper .container .central_div .dice {
+        display: none;
+        width: 75px;
+        height: 75px;
+        background-color: #ffffff;
+        box-shadow: 1px 3px 13px 0px rgba(0, 0, 0, 0.3);
+        margin: 50px auto 0;
+        position: relative; }
+        .wrapper .container .central_div .dice > div {
+          width: 10px;
+          height: 10px;
+          background: #ef1c40;
+          border-radius: 20px;
+          position: absolute;
+          display: none; }
+        .wrapper .container .central_div .dice > :nth-child(1) {
+          left: 12px;
+          top: 12px; }
+        .wrapper .container .central_div .dice > :nth-child(2) {
+          right: 12px;
+          top: 12px; }
+        .wrapper .container .central_div .dice > :nth-child(3) {
+          left: 12px;
+          top: 50%;
+          transform: translate(0, -50%); }
+        .wrapper .container .central_div .dice > :nth-child(4) {
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%); }
+        .wrapper .container .central_div .dice > :nth-child(5) {
+          right: 12px;
+          top: 50%;
+          transform: translate(0, -50%); }
+        .wrapper .container .central_div .dice > :nth-child(6) {
+          bottom: 12px;
+          left: 12px; }
+        .wrapper .container .central_div .dice > :nth-child(7) {
+          bottom: 12px;
+          right: 12px; }
+      .wrapper .container .central_div .dice#dice_1 > :nth-child(4) {
+        display: block !important; }
+      .wrapper .container .central_div .dice#dice_2 > :nth-child(3), .wrapper .container .central_div .dice#dice_2 > :nth-child(5) {
+        display: block !important; }
+      .wrapper .container .central_div .dice#dice_3 > :nth-child(2), .wrapper .container .central_div .dice#dice_3 > :nth-child(4), .wrapper .container .central_div .dice#dice_3 > :nth-child(6) {
+        display: block; }
+      .wrapper .container .central_div .dice#dice_4 > :nth-child(1), .wrapper .container .central_div .dice#dice_4 > :nth-child(2), .wrapper .container .central_div .dice#dice_4 > :nth-child(6), .wrapper .container .central_div .dice#dice_4 > :nth-child(7) {
+        display: block; }
+      .wrapper .container .central_div .dice#dice_5 > :nth-child(1), .wrapper .container .central_div .dice#dice_5 > :nth-child(2), .wrapper .container .central_div .dice#dice_5 > :nth-child(4), .wrapper .container .central_div .dice#dice_5 > :nth-child(6), .wrapper .container .central_div .dice#dice_5 > :nth-child(7) {
+        display: block; }
+      .wrapper .container .central_div .dice#dice_6 > :nth-child(1), .wrapper .container .central_div .dice#dice_6 > :nth-child(2), .wrapper .container .central_div .dice#dice_6 > :nth-child(3), .wrapper .container .central_div .dice#dice_6 > :nth-child(5), .wrapper .container .central_div .dice#dice_6 > :nth-child(6), .wrapper .container .central_div .dice#dice_6 > :nth-child(7) {
+        display: block; }
+      .wrapper .container .central_div .new {
+        margin-top: 30px; }
+      .wrapper .container .central_div .btns {
+        position: absolute;
+        top: 65%;
+        left: 50%;
+        width: 119px;
+        transform: translate(-50%, 0); }
+
+/*# sourceMappingURL=style.css.map */

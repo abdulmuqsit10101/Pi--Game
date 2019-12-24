@@ -1,0 +1,68 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Pic_Game</title>
+    <link rel="stylesheet" href="./style/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Quicksand&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <div class="player_wrapper active" id="player_wrapper_0">
+          <p class="player_name">
+            Player 1
+          </p>
+          <p class="player_points" id="score_0">
+            43
+          </p>
+          <div class="current_wrapper">
+            <p class="current">Current</p>
+            <p class="points" id="current_0">11</p>
+          </div>
+        </div>
+        <div class="player_wrapper" id="player_wrapper_1">
+          <p class="player_name">
+            Player 2
+          </p>
+          <p class="player_points" id="score_1">72</p>
+          <div class="current_wrapper">
+            <p class="current">Current</p>
+            <p class="points" id="current_1">11</p>
+          </div>
+        </div>
+        <div class="central_div">
+          <button class="new" id="new_game">
+            <img class="plus_icon" src="./images/plus_icon.svg" />
+            New Game
+          </button>
+          <div class="dice" id="dice_3">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <div class="btns">
+            <button id="roll_dice_btn">
+              <img src="./images/refresh.svg" />
+              Roll Dice
+            </button>
+            <button id="hold_btn">
+              <img src="./images/hold.svg" />
+              Hold
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
