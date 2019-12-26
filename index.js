@@ -6,6 +6,7 @@ var dice_elm = document.querySelector('.dice');
 var score = [0, 0];
 var roundScore = 0;
 var activeplayer = 0;
+var recent_dice;
 
 document.getElementById('score_0').textContent = '0';
 document.getElementById('score_1').textContent = '0';
@@ -15,6 +16,13 @@ document.getElementById('current_1').textContent = '0';
 roll_dice_btn.addEventListener('click', function () {
 
     var dice = Math.floor(Math.random() * 6) + 1;
+
+
+    if (dice === 6 && recent_dice === 6) {
+        reset();
+    }
+
+    recent_dice = dice;
 
     // show dice
     dice_elm.id = 'dice_' + dice;
@@ -37,7 +45,7 @@ hold_btn.addEventListener('click', function () {
     score[activeplayer] += roundScore;
     document.querySelector('#score_' + activeplayer).textContent = score[activeplayer];
 
-    if (score[activeplayer] >= 20) {
+    if (score[activeplayer] >= 220) {
         document.querySelector('#score_' + activeplayer).textContent = 'Winner!'
         document.getElementById('player_wrapper_' + activeplayer).classList.toggle('winner');
         document.getElementById('player_wrapper_' + activeplayer).classList.toggle('active');
