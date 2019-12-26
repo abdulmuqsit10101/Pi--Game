@@ -12,6 +12,14 @@
   </head>
   <body>
     <div class="wrapper">
+      <form class="winning_points_wrapper container" method="GET">
+        <label>Set the Winning points of the game: </label>
+        <input id="winning_point_input" type="number" required />
+        <button class="set-winning-targets" type="button" name="data" onclick="setterWinner()">
+          Set Winning target
+        </button>
+      </form>
+
       <div class="container">
         <div class="player_wrapper active" id="player_wrapper_0">
           <p class="player_name">

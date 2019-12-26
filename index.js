@@ -7,12 +7,15 @@ var score = [0, 0];
 var roundScore = 0;
 var activeplayer = 0;
 var recent_dice;
+var winning_target = 100;
 
 document.getElementById('score_0').textContent = '0';
 document.getElementById('score_1').textContent = '0';
 document.getElementById('current_0').textContent = '0';
 document.getElementById('current_1').textContent = '0';
-// events
+
+// Events
+
 roll_dice_btn.addEventListener('click', function () {
 
     var dice = Math.floor(Math.random() * 6) + 1;
@@ -41,11 +44,13 @@ roll_dice_btn.addEventListener('click', function () {
     console.log(dice);
 });
 
+// Hold Button
+
 hold_btn.addEventListener('click', function () {
     score[activeplayer] += roundScore;
     document.querySelector('#score_' + activeplayer).textContent = score[activeplayer];
 
-    if (score[activeplayer] >= 220) {
+    if (score[activeplayer] >= winning_target) {
         document.querySelector('#score_' + activeplayer).textContent = 'Winner!'
         document.getElementById('player_wrapper_' + activeplayer).classList.toggle('winner');
         document.getElementById('player_wrapper_' + activeplayer).classList.toggle('active');
@@ -65,13 +70,8 @@ hold_btn.addEventListener('click', function () {
 });
 
 new_game.addEventListener('click', function () {
-    // score = [0, 0];
-    // roundScore = 0;
-    // reset();
     location.reload();
 });
-
-
 
 function reset() {
     activeplayer === 0 ? activeplayer = 1 : activeplayer = 0;
@@ -84,4 +84,18 @@ function reset() {
     document.getElementById('player_wrapper_1').classList.toggle('active');
 
     dice_elm.style.display = 'none';
+}
+
+
+
+function setterWinner() {
+    const input  = document.getElementById('winning_point_input');
+    if( input.value != '' ){
+        winning_target = input.value;
+        input.value = '';
+        alert('Yeah new winning target has set!')
+    }
+    else{
+        alert('Input Should not be empty!')
+    }
 }

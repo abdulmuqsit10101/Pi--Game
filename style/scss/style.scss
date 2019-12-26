@@ -8,6 +8,27 @@ $white: #ffffff;
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+input {
+  outline: none;
+  border: 1px solid gray;
+  &:hover,
+  &:focus {
+    border: 1px solid $pink;
+  }
+}
+
+input,
+button {
+  outline: none;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 body {
@@ -38,6 +59,7 @@ body {
 .wrapper {
   padding: 10vw 0;
   background-image: linear-gradient(134deg, #aa936f 62%, #7c3a3c 93%);
+
   .container {
     max-width: 1000px;
     margin: 0 auto;
@@ -219,6 +241,36 @@ body {
         left: 50%;
         width: 119px;
         transform: translate(-50%, 0);
+      }
+    }
+  }
+
+  .winning_points_wrapper {
+    margin: 40px auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: none;
+    label {
+      display: block;
+      font-size: 20px;
+      padding-bottom: 10px;
+    }
+    input {
+      padding: 10px;
+      font-size: 17px;
+    }
+    button {
+      padding: 10px 30px;
+      margin-top: 20px;
+      border: 1px solid transparent;
+      background-color: $pink;
+      color: $white;
+      transition: all 0.24s ease-out;
+      border-radius: 10px;
+      &:hover {
+        background-color: $white;
+        color: $pink;
+        border: 1px solid $pink;
       }
     }
   }

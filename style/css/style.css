@@ -1,6 +1,22 @@
 * {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  box-sizing: border-box; }
+
+input {
+  outline: none;
+  border: 1px solid gray; }
+  input:hover, input:focus {
+    border: 1px solid #ef1c40; }
+
+input,
+button {
+  outline: none; }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
 
 body {
   font-family: "Quicksand", sans-serif; }
@@ -152,5 +168,29 @@ body {
         left: 50%;
         width: 119px;
         transform: translate(-50%, 0); }
+  .wrapper .winning_points_wrapper {
+    margin: 40px auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: none; }
+    .wrapper .winning_points_wrapper label {
+      display: block;
+      font-size: 20px;
+      padding-bottom: 10px; }
+    .wrapper .winning_points_wrapper input {
+      padding: 10px;
+      font-size: 17px; }
+    .wrapper .winning_points_wrapper button {
+      padding: 10px 30px;
+      margin-top: 20px;
+      border: 1px solid transparent;
+      background-color: #ef1c40;
+      color: #ffffff;
+      transition: all 0.24s ease-out;
+      border-radius: 10px; }
+      .wrapper .winning_points_wrapper button:hover {
+        background-color: #ffffff;
+        color: #ef1c40;
+        border: 1px solid #ef1c40; }
 
 /*# sourceMappingURL=style.css.map */
